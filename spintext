@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกมสุ่มรางวัลวงล้อ</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .wheel-container {
+            position: relative;
+            display: inline-block;
+        }
+        .wheel {
+            width: 200px;
+            height: 200px;
+            border: 5px solid #333;
+            border-radius: 50%;
+            position: relative;
+            animation: spin 4s ease-in-out infinite;
+        }
+        .wheel::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 45%;
+            left: 45%;
+        }
+        .arrow {
+            position: absolute;
+            bottom: -20px; /* ระยะห่างจากวงล้อ */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 15px solid #333; /* สีขอบลูกศร */
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .prize {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .history {
+            margin-top: 20px;
+            text-align: left;
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .history-button {
+            margin-right: 20px;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 18px;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .copy-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wheel-container">
+        <div class="arrow"></div>
+        <div class="wheel" id="wheel">
+            <div class="prize">รางวัล</div>
+        </div>
+        <button onclick="spinWheel()">หมุน</button>
+    </div>
+    <div class="history" id="history">
+        <h1>กดปุ่มเพื่อหมุนวงล้อ</h1>
+        <h2>ประวัติการสุ่ม</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ลำดับ</th>
+                    <th>รางวัล</th>
+                    <th>คัดลอก</th>
+                </tr>
+            </thead>
+            <tbody id="history-table">
+                <!-- รายการรางวัลที่ถูกสุ่มมาจะแสดงที่นี่ -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const wheel = document.getElementById('wheel');
+        const prizeElement = document.querySelector('.prize');
+        const historyTable = document.getElementById('history-table');
+        const prizes = ["รางวัลที่ 1", "รางวัลที่ 2", "รางวัลที่ 3", "รางวัลที่ 4", "รางวัลที่ 5"];
+        const history = [];
+
+        function spinWheel() {
+            const degrees = Math.floor(Math.random() * 360);
+            const prizeIndex = Math.floor(Math.random() * prizes.length);
+            const prize = prizes[prizeIndex];
+
+            wheel.style.transition = 'transform 3s ease-out';
+            wheel.style.transform = `rotate(${degrees}deg)`;
+
+            history.push(prize);
+            updateHistory();
+
+            setTimeout(() => {
+                prizeElement.textContent = prize;
+            }, 3000);
+        }
+
+        function updateHistory() {
+            historyTable.innerHTML = '';
+            for (let i = 0; i < history.length; i++) {
+                const row = document.createElement('tr');
+                const indexCell = document.createElement('td');
+                const prizeCell = document.createElement('td');
+                const copyCell = document.createElement('td');
+                const copyButton = document.createElement('button');
+
+                indexCell.textContent = i + 1;
+                prizeCell.textContent = history[i];
+                copyButton.textContent = 'คัดลอก';
+                copyButton.classList.add('copy-button');
+                copyButton.onclick = function () {
+                    copyPrize(history[i]);
+                };
+
+                row.appendChild(indexCell);
+                row.appendChild(prizeCell);
+                copyCell.appendChild(copyButton);
+                row.appendChild(copyCell);
+
+                historyTable.appendChild(row);
+            }
+        }
+
+        function copyPrize(prizeToCopy) {
+            const tempInput = document.createElement('input');
+            tempInput.value = prizeToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert(`คัดลอกรางวัล: ${prizeToCopy}`);
+        }
+    </script>
+</body>
+</html>
