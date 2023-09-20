@@ -1,63 +1,83 @@
-  <style>
-        .input-container {
-            display: flex;
-            align-items: center;
-            
-            margin-bottom: 10px; /* ระยะห่างระหว่างกล่องข้อความแต่ละกล่อง */
-        }
+<style>
+    .input-container {
+        display: flex;
+        align-items: center;
+        
+        
+        margin-bottom: 100px;/*ระยะห่างระหว่างกล่องข้อความแต่ละกล่อง */
+    }
 
-        .input-container input {
-            width: 300px;
-            height: 50px;
-            font-size: 20px;
-            text-align: center;            
-             /* กำหนดสีพื้นหลังของกล่องเป็นสีเขียวอ่อน */
-            margin-right: 20px; /* ระยะห่างระหว่างกล่องข้อความและปุ่ม "คัดลอก" */
-            border: none; /* กำหนดไม่มีเส้นขอบ */
-        }
+    .input-container input {
+        width: 300px;
+        height: 50px;
+        font-size: 20px;
+        text-align: center;            
+         /* กำหนดสีพื้นหลังของกล่องเป็นสีเขียวอ่อน */
+        margin-right: 20px; /* ระยะห่างระหว่างกล่องข้อความและปุ่ม "คัดลอก" */
+        border: none; /* กำหนดไม่มีเส้นขอบ */
+    }
 
-        .input-container button {
-            width: 100px;
-            height: 40px;
-            font-size: 14px;
-            text-align: center;  
-            background-color: orange; /* กำหนดสีพื้นหลังของปุ่มเป็นสีเขียว */
-            color: white; /* กำหนดสีตัวอักษรเป็นสีขาว */
-            border: none; /* กำหนดไม่มีเส้นขอบ */
-        }
-    </style>
- <div class="container">
-     
-       <div class="input-container">
-                     <p align="center" ><img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.15752-9/380793689_857742826054881_4863751877446763944_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHLOkAHl_DgE3VUxDL6IChHwjsp7c8Y-0rCOyntzxj7SizXfcYnf25sKJmQd5J0sFeteM7eiCHSY3bjtuJA3IDf&_nc_ohc=f_mcCKlXq7QAX8z5m7Q&_nc_ht=scontent.fbkk10-1.fna&oh=03_AdSpYQiwlzaRfHEIUPV13Dyjshl3NpnJAwpFd6VBGYw2Ew&oe=653249A2" width="500">
-
-            <center><input type="text" class="textToCopy" value="rfckavb4" readonly
-            ></center>
-            <button class="copyButton" onclick="copyText(1)">คัดลอก</button></p>
-        </div>
-        <div class="input-container">
-                 <p align="center" ><img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.15752-9/380785656_834786954867233_1913152545902696082_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHbIgmBOUwR42OJt0JAV_DhKtpSpPkARE4q2lKk-QBETvF_b0Dm0Q4UisNdfVKMzMadRNyVjlU-3Du1GHw9-Kss&_nc_ohc=f0nFhE59YGsAX_l1h1x&_nc_ht=scontent.fbkk10-1.fna&oh=03_AdTmDR9EWLSoiWSTJ0sC1nofxRgqi0Y4ASK-QU6uQ5hQlA&oe=65322B7C" width="500">
-           <center></center><input type="text" class="textToCopy" value="w644bk6s" readonly>
-            <button class="copyButton" onclick="copyText(2)">คัดลอก</button>
-        </div>
-</p>
-        <div class="input-container">
-                     <p align="center" ><img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.15752-9/380742583_120642611130590_9157816084795058877_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeF2Ide4AKDRxRblqMm0bxRy1Gfr8uaR_GXUZ-vy5pH8ZWVbwtqi3saZ4NXjOGeFST8_VMVXcpZy2ztPh6RIgRyM&_nc_ohc=iF7hLrirghYAX-55T06&_nc_ht=scontent.fbkk10-1.fna&oh=03_AdTaZjZQlFnoYYSbgiMSW6V0ILAmBZ-zXNmU6tWIAItU6w&oe=65323C5E" width="500">
-            <center></center><input type="text" class="textToCopy" value="ข้อความ 3" readonly>
-            <button class="copyButton" onclick="copyText(3)">คัดลอก</button>
-        </div></p>
-        <div class="input-container">
-                         <p align="center" ><img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.15752-9/380794016_271666109128191_6657088449220440989_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFiGWerkRv9FqdWcrveHPBXcXP_F_mUokBxc_8X-ZSiQFffe5_AbyumZB4jQHJR34KtfTY9lMZhja8sLoyo6_3I&_nc_ohc=jQVOzBGW1UgAX-7zAFy&_nc_ht=scontent.fbkk10-1.fna&oh=03_AdQRHZSxiGwpgD-f1yqmDfCGWnVE-SPPgB5c8SPD-Mk3sw&oe=65324328" width="500">
-            <center><input type="text" class="textToCopy" value="ข้อความ 4" readonly>
-            <button class="copyButton" onclick="copyText(4)">คัดลอก</button>
-        </div>
+    .input-container button {
+        width: 150px;
+        height: 60px;
+        font-size: 14px;
+        text-align: center;  
+        background-color: orange; /* กำหนดสีพื้นหลังของปุ่มเป็นสีเขียว */
+        color: white; /* กำหนดสีตัวอักษรเป็นสีขาว */
+        border: 100px; /*อบ */
+    }
+</style>
+<div class="container">
+ 
+    <div class="input-container">
+        <p align="center" ><img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.15752-9/380793689_857742826054881_4863751877446763944_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHLOkAHl_DgE3VUxDL6IChHwjsp7c8Y-0rCOyntzxj7SizXfcYnf25sKJmQd5J0sFeteM7eiCHSY3bjtuJA3IDf&_nc_ohc=f_mcCKlXq7QAX8z5m7Q&_nc_ht=scontent.fbkk10-1.fna&oh=03_AdSpYQiwlzaRfHEIUPV13Dyjshl3NpnJAwpFd6VBGYw2Ew&oe=653249A2" width="500">
+        <center>
+                <input type="text" class="textToCopy" value="rfckavb4" readonly style="font-size: 0;">     
+            <button class="copyButton"  onclick="copyText(1)">คัดลอก</button>
+        </center>
     </div>
-     <script>
+    
+    <script>
         function copyText(index) {
-            var textToCopy = document.getElementsByClassName("textToCopy")[index - 1];
-            textToCopy.select();
+            var textToCopy = document.getElementsByClassName("textToCopy")[index - 1].value;
+            var textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
             document.execCommand('copy');
-            alert("คัดลอกข้อความแล้ว: " + textToCopy.value);
+            document.body.removeChild(textArea);
+            alert("คัดลอกโค้ดส่วนลด 10% แล้ว: " + textToCopy);
         }
     </script>
+    
+    <div class="input-container">
+             <p align="center" ><img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.15752-9/380785656_834786954867233_1913152545902696082_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHbIgmBOUwR42OJt0JAV_DhKtpSpPkARE4q2lKk-QBETvF_b0Dm0Q4UisNdfVKMzMadRNyVjlU-3Du1GHw9-Kss&_nc_ohc=f0nFhE59YGsAX_l1h1x&_nc_ht=scontent.fbkk10-1.fna&oh=03_AdTmDR9EWLSoiWSTJ0sC1nofxRgqi0Y4ASK-QU6uQ5hQlA&oe=65322B7C" width="500">
+       <center></center><input type="text" class="textToCopy" value="w644bk6s" readonly style="font-size: 0;">
+        <button class="copyButton" onclick="copyText(2)">คัดลอก</button>
+    </div>
+</p>
+    <div class="input-container">
+                 <p align="center" ><img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.15752-9/380742583_120642611130590_9157816084795058877_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeF2Ide4AKDRxRblqMm0bxRy1Gfr8uaR_GXUZ-vy5pH8ZWVbwtqi3saZ4NXjOGeFST8_VMVXcpZy2ztPh6RIgRyM&_nc_ohc=iF7hLrirghYAX-55T06&_nc_ht=scontent.fbkk10-1.fna&oh=03_AdTaZjZQlFnoYYSbgiMSW6V0ILAmBZ-zXNmU6tWIAItU6w&oe=65323C5E" width="500">
+        <center></center><input type="text" class="textToCopy" value="ข้อความ 3" readonly style="font-size: 0;">
+        <button class="copyButton" onclick="copyText(3)">คัดลอก</button>
+    </div></p>
+    <div class="input-container">
+                     <p align="center" ><img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.15752-9/380794016_271666109128191_6657088449220440989_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFiGWerkRv9FqdWcrveHPBXcXP_F_mUokBxc_8X-ZSiQFffe5_AbyumZB4jQHJR34KtfTY9lMZhja8sLoyo6_3I&_nc_ohc=jQVOzBGW1UgAX-7zAFy&_nc_ht=scontent.fbkk10-1.fna&oh=03_AdQRHZSxiGwpgD-f1yqmDfCGWnVE-SPPgB5c8SPD-Mk3sw&oe=65324328" width="500">
+                     
+        <center><input type="text" class="textToCopy" value="ข้อความ 4" readonly style="font-size: 0;">
+        <button class="copyButton" onclick="copyText(4)">คัดลอก</button>
+    </div>
+</div>
+ <script>
+function copyText(index) {
+    var textToCopy = document.getElementsByClassName("textToCopy")[index - 1].value;
+    var textArea = document.createElement("textarea");
+    textArea.value = textToCopy;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert("คัดลอกข้อความแล้ว: " + textToCopy);
+}
+</script>
 </body></br>
